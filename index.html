@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rickroll</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <audio autoplay hidden>
+        <source src="rickroll.mp3" type="audio/mpeg">
+        Your browser does not support the audio tag.
+    </audio>
+    <div class="container">
+        <h1 class="title">You got rickrolled ;)</h1>
+        <div class="content-container">
+            <div class="gif-container">
+                <img class="rickroll" alt="Never gonna give you up" src="rickroll.gif">
+            </div>
+            <div class="lyrics-container">
+                <div class="static-text" id="staticText">If you are seeing this, please enable JavaScript for this website!</div>
+                <p class="lyrics">
+We're no strangers to love<br>
+You know the rules and so do I (do I)<br>
+A full commitment's what I'm thinking of<br>
+You wouldn't get this from any other guy<br><br>
+
+I just wanna tell you how I'm feeling<br>
+Gotta make you understand<br><br>
+
+Never gonna give you up<br>
+Never gonna let you down<br>
+Never gonna run around and desert you<br>
+Never gonna make you cry<br>
+Never gonna say goodbye<br>
+Never gonna tell a lie and hurt you<br><br>
+
+We've known each other for so long<br>
+Your heart's been aching, but you're too shy to say it (say it)<br>
+Inside, we both know what's been going on (going on)<br>
+We know the game and we're gonna play it<br><br>
+
+And if you ask me how I'm feeling<br>
+Don't tell me you're too blind to see<br><br>
+
+Never gonna give you up<br>
+Never gonna let you down<br>
+Never gonna run around and desert you<br>
+Never gonna make you cry<br>
+Never gonna say goodbye<br>
+Never gonna tell a lie and hurt you<br><br>
+
+Never gonna give you up<br>
+Never gonna let you down<br>
+Never gonna run around and desert you<br>
+Never gonna make you cry<br>
+Never gonna say goodbye<br>
+Never gonna tell a lie and hurt you<br><br><br>
+
+Ooh (Give you up)<br>
+Ooh-ooh (Give you up)<br>
+Ooh-ooh<br>
+Never gonna give, never gonna give (Give you up)<br>
+Ooh-ooh<br>
+Never gonna give, never gonna give (Give you up)<br><br><br>
+
+We've known each other for so long<br>
+Your heart's been aching, but you're too shy to say it (to say it)<br>
+Inside, we both know what's been going on (going on)<br>
+We know the game and we're gonna play it<br><br>
+
+I just wanna tell you how I'm feeling<br>
+Gotta make you understand<br><br>
+
+Never gonna give you up<br>
+Never gonna let you down<br>
+Never gonna run around and desert you<br>
+Never gonna make you cry<br>
+Never gonna say goodbye<br>
+Never gonna tell a lie and hurt you<br><br>
+
+Never gonna give you up<br>
+Never gonna let you down<br>
+Never gonna run around and desert you<br>
+Never gonna make you cry<br>
+Never gonna say goodbye<br>
+Never gonna tell a lie and hurt you<br><br>
+
+Never gonna give you up<br>
+Never gonna let you down<br>
+Never gonna run around and desert you<br>
+Never gonna make you cry<br>
+Never gonna say goodbye<br>
+Never gonna tell a lie and hurt you<br>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            const countdownDuration = 15; // seconds for the countdown
+            let timeLeft = countdownDuration;
+            const staticText = document.getElementById('staticText');
+            const lyrics = document.querySelector('.lyrics');
+
+            // Optional: Initially pause the animation
+            lyrics.style.animationPlayState = 'paused';
+
+            const countdownTimer = setInterval(function() {
+            if (timeLeft > 0) {
+                staticText.innerText = `Get ready! Song starts in ${timeLeft} seconds...`;
+                timeLeft -= 1;
+            } else {
+                clearInterval(countdownTimer);
+                staticText.style.display = 'none'; // Hide the static text
+
+                // Start the lyrics animation
+                lyrics.style.animationPlayState = 'running'; // Resume the animation
+            }
+        }, 1000);
+    });
+
+
+        // Function to set scroll speed dynamically, if needed
+        function setScrollSpeed(speed) {
+            document.documentElement.style.setProperty('--scroll-speed', speed + 's');
+        }
+
+     </script>
+        
+    
+    
+	  
+</body>
+</html>
